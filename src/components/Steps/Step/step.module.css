@@ -1,0 +1,294 @@
+.step{
+    /* margin-top: 50px; */
+    /* margin-bottom: 200px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;    
+    position: sticky;
+    top: 0vh;
+    /* transform: translateY(-50%); */
+    background-color: var(--main-bg-color);
+    height: 100vh;
+    border-top: 2px solid var(--main-color);
+    /* scroll-snap-align: top; */
+    box-shadow: var(--step-shadow);
+}
+.step:first-of-type{
+    height: 95vh;
+    box-shadow: none;
+}
+@media (max-width: 992px) {
+    
+    .step:first-of-type{
+        height: 95vh;
+    }
+}
+@media (max-width: 767px) {
+    
+    .step:first-of-type{
+        height: 95vh;
+    }
+}
+.step div:has(> .scrollNextStep){
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    bottom: 40px;
+}
+.step div:has(> .scrollPrevStep){
+}
+.step div:has(> .scrollNextStep){
+}
+.step div:has(> .scrollNextStep) .scrollNextStep{
+    color: var(--text-color);
+}
+.step.reversed{
+    flex-direction: row-reverse;
+}
+.step span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 200px;
+    font-weight: bold;
+    color: var(--step-count);
+    z-index: 1;
+    transition: var(--main-transition);
+}
+.step:has(div.animate) span{
+    font-size: 250px;
+    color: var(--step-count-animated);
+}
+.step .circle{ 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--sub-main-color);
+    transition: var(--main-transition);
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.step > div{
+    width: calc((100% - 150px) / 2);
+}
+.step > div{
+    /* width: calc((100% - 250px) / 2); */
+    transition: var(--main-transition);
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+}
+.step > div > div{
+    transition: var(--main-transition), filter 0.2s 0.2s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-duration: 0.8s;
+    opacity: 0;
+    filter: blur(20px) grayscale(100%);
+    position: relative;
+    z-index: 2;
+}
+.step .one{
+    z-index: 2;
+    position: relative;
+    color: var(--text-color);
+}
+.step .one > div{
+    /* height: 400px; */
+    /* padding-left: 40px;
+    padding-right: 40px; */
+}
+.step .two > div{
+    transform: translateX(200px);
+}
+.step .two .img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.step .two > div > *{
+    /* width: 300px; */
+    width: 80%;
+}
+.step > div.animate > div{
+    filter: blur(0px) grayscale(0%);
+    opacity: 1;
+}
+.step .one.animate > div{
+    transform: translateX(-0px);
+}
+.step .two.animate > div{
+    transform: translateX(0px);
+}
+.step .text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    /* height: auto; */
+}
+.step.reversed .text{
+    padding-left: 60px;
+}
+.step h2{
+    color: var(--text-color);
+    font-size: 34px;
+    font-weight: bold;
+    z-index: 2;
+    margin-bottom: 10px;
+    position: absolute;
+    transition: all 0.2s 1s, opacity 1s 0.5s;
+    transition-delay: 0.3s;
+    /* text-wrap: nowrap; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+div[language="ar"] .step .one h2{
+    right: 50%;
+    left: auto;
+    transform: translate(0%,-0%);
+}
+.step .one.animate h2{
+    font-size: 26px;
+    top: 0%;
+    left: 40px;
+    transform: translate(-0%,-0%);
+    opacity: 1;
+}
+div[language="ar"] .step .one.animate h2{
+    right: 0px;
+    left: auto;
+}
+.step.reversed .one.animate h2{
+    left: 60px;
+}
+.step p{
+    width: 80%;
+    transition: var(--main-transition);
+    transition-delay: 0.8s;
+    z-index: 2;
+    opacity: 0;
+    filter: blur(5px);
+    min-height: 150px;
+}
+.step p{
+    
+}
+.step > div.animate > div p{
+    transform: translateY(20px);
+    filter: blur(0px);
+    opacity: 1;
+}
+@media (max-width: 992px) {
+    .step,
+    .step.reversed{
+        flex-direction: column-reverse;
+        width: 100%;
+        justify-content: center;
+    }
+    .step > div:first-child{
+        width: 100%;
+    }
+    .step > div{
+        /* width: calc((100% - 150px) / 2); */
+        text-align: center;
+        width: 100%;
+    }
+    .step span{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 100px;
+    }
+    .step:has(div.animate) span{
+        font-size: 450px;
+    }
+    .step .text{
+        padding-left: 0px;
+    }
+    .step.reversed .text{
+        padding-left: 0px;
+    }
+    .step p{
+        margin-left: auto;
+        min-height: 200px;
+        margin-right: auto;
+    }
+    .step.reversed p{
+        padding-left: 0px;
+    }
+    .step .one.animate h2{
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%,-0%);
+        opacity: 1;
+    }
+    .step.reversed .one.animate h2{
+        left: 50%;
+    }
+    .step > div{
+        width: 50%;
+    }
+    .step h2{
+        width: 100%;
+    }
+    div[language="ar"] .step .one.animate h2{
+        right: 50%;
+        transform: translate(50%,-0%);
+        left: auto;
+    }
+}
+@media (max-width:600px) {
+    .step{
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .step span{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 200px;
+    }
+    .step:has(.one.animate) span{
+        color: #cdcdcd;
+    }
+    .step[theme="dark"]:has(.one.animate) span{
+        color: #313131;
+    }
+    .step .two{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .step .two .img{
+        width: 400px;
+    }
+    .step > div:last-child{
+        width: 100%;
+    }
+    .step p{
+       width: 100%;
+    }
+    .step .one.animate h2{
+        width: 100%;
+    }
+}

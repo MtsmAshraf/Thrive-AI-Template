@@ -1,0 +1,74 @@
+.stepsScroll{
+    position: sticky;
+    top : 70px;
+    width: 100%;
+    height: 5vh;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.stepsScroll ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    position: relative;
+    background-color: var(--main-bg-color);
+}
+.stepsScroll ul span{
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    height: 5px;
+    width: 0%;
+    /* background-image: var(--main-gradient); */
+    transition: var(--main-transition);
+}
+.stepsScroll ul[language="en"] span{
+    left: 0;
+}
+.stepsScroll ul[language="ar"] span{
+    right: 0;
+}
+.stepsScroll ul span:first-of-type{
+    background-color: var(--main-color);
+}
+/* .stepsScroll ul span:last-of-type{
+    background-color: red;
+    display: none;
+} */
+@media (max-width: 600px) {
+    /* .stepsScroll ul span:first-of-type{
+        display: none;
+    }
+    .stepsScroll ul span:last-of-type{
+        display: block;
+    } */
+}
+.stepsScroll ul li{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    /* background-color: green; */
+    justify-content: center;
+    /* background-image: var(--main-gradient); */
+    color: white;
+    box-shadow: var(--card-hover-shadow);
+    border: 3px solid var(--main-color);
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    background-color: var(--main-bg-color);
+    transition: var(--main-transition);
+    /* transition-delay: 10s; */
+    /* transition-duration: 2s; */
+}

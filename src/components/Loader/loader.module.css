@@ -1,0 +1,80 @@
+.loader{
+    position: fixed;
+    z-index: 30;
+    left: 0;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.loader[animate="animate"] {
+    animation: loader 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) 1s 1;
+    animation-fill-mode: forwards;
+}
+.loader[loader="no"]{
+    /* animation: loader 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) 1s 1 reverse; */
+    /* animation: loader-rev 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) 1s 1 both alternate; */
+   
+}
+.loader ul{
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    /* background-color: red; */
+    justify-content: space-between;
+}
+.loader ul li{
+    width: 10px;
+    height: 100px;
+    transition: var(--main-trnasition);
+    transform-origin: bottom;
+    animation: loader-li 0.7s linear infinite both alternate;
+}
+.loader ul li:nth-child(2){
+    animation-delay: 0.2s;
+}
+.loader ul li:nth-child(3){
+    animation-delay: 0.4s;
+}
+.loader ul li:nth-child(4){
+    animation-delay: 0.6s;
+}
+.loader ul li:nth-child(5){
+    animation-delay: 0.8s;
+}
+@media (max-width: 600px) {
+    .loader ul{
+        transform: scale(0.7);
+    }
+}
+@keyframes loader {
+    0%{
+        height: 100vh;
+    }
+    100%{
+        height: 0vh;
+    }
+}
+@keyframes loader-rev {
+    0%{
+        height: 0vh;
+    }
+    100%{
+        height: 100vh;
+    }
+}
+@keyframes loader-li {
+    0%{
+        height: 10px;
+        background-color: var(--main-color);
+    }
+    100%{
+        height: 100px;
+        background-color: var(--sub-main-color);
+    }
+}

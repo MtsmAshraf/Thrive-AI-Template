@@ -1,0 +1,277 @@
+.contact{
+    color: var(--text-color);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.contact > div:has(form){
+}
+
+.contact > div:has(form){
+    background-color: rgba(8, 7, 7, 0.2);
+    /* background-color: transparent; */
+    min-height: 700px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transition);
+    transition-duration: 0.5ss;
+    perspective-origin: center center;
+    box-shadow: var(--card-hover-shadow);
+    transition: var(--main-transition);
+    margin-top: 20px;
+    max-width: 95%;
+}
+.contact > div:has(form) .containerBorder,
+.contact > div:has(form):before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: var(--main-transition);
+    border-radius: inherit;
+    opacity: 1;
+}
+.contact > div:has(form):before{
+    background-image: radial-gradient(
+        2000px circle at 500px 1000px,
+        var(--main-color),
+        transparent 40%
+    );
+    z-index: 2;
+}
+.contact > div:has(form) .containerBorder{
+    background-image: radial-gradient(
+        1200px circle at 500px 1000px,
+        var(--main-color) 20%,
+        transparent 80%
+    );
+    z-index: 1;
+}
+
+.contact > div:has(form) .containerContent{
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 8px;
+    background-color: var(--card-content-bg);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    position: absolute;
+    padding: 20px;
+    z-index: 2;
+    text-align: center;
+}
+.contact .containerContent .sendSuccess{
+    position: fixed;
+    z-index: 21;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0px;
+    height: 200px;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    /* border: 2px solid var(--main-color); */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: var(--hover-shadow);
+    background-image: var(--main-gradient);
+    color: white;
+    font-weight: bold;
+    /* opacity: 0; */
+    transition: var(--main-transition);
+    transition-delay: 0.4s;
+}
+.contact .containerContent .sendSuccess span{
+    font-size: 50px;
+    background-color:var(--sub-main-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--main-transition);
+    transform: translateY(10px);
+    opacity: 0;
+}
+.contact .containerContent .sendSuccess p{
+    transition: var(--main-transition);
+    transform: translateY(10px);
+    font-size: 20px;
+    opacity: 0;
+}
+/* .contact .containerContent:hover .sendSuccess{
+    width: 350px;
+    border: 2px solid var(--main-color);
+    transition-delay: 0s;
+} */
+/* .contact .containerContent:hover .sendSuccess span,
+.contact .containerContent:hover .sendSuccess p{
+    opacity: 1;
+    transform: translateY(0);
+}
+.contact .containerContent:hover .sendSuccess span{
+    transition-delay: 0.4s;
+}
+.contact .containerContent:hover .sendSuccess p{
+    transition-delay: 0.6s;
+} */
+
+.contact > div:has(form) .containerContent > *{
+    width: 50%;
+}
+.contact > div:has(form) .containerContent form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.contact > div:has(form) .containerContent form > *{
+    transition: var(--main-transition);
+    width: 70%;
+}
+.contact > div:has(form) .containerContent form > *:not([type="submit"]){
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+.contact > div:has(form) .containerContent form div input,
+.contact > div:has(form) .containerContent form div textarea{
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+    outline: none;
+    border: none;
+    border: 1px solid transparent;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    transition: var(--main-transition);
+}
+.contact > div:has(form) .containerContent[language="ar"] form *{
+    font-family: "Tajawal", sans-serif;
+}
+.contact > div:has(form) .containerContent form input:focus,
+.contact > div:has(form) .containerContent form textarea:focus{
+    border: 1px solid var(--main-color);
+}
+.contact > div:has(form) .containerContent form input[type="email"]{
+    background-color: var(--main-bg-color);
+    
+}
+.contact > div:has(form) .containerContent form textarea{
+    height: 200px;
+    background-color: var(--main-bg-color);
+}
+.contact > div:has(form) .containerContent form input[type="submit"]{
+    background-color: var(--text-color);
+    color: var(--main-bg-color);
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    border: none;
+    border: 1px solid transparent;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+.contact > div:has(form) .containerContent[language="ar"]  form input[type="submit"]{
+    font-family: "Tajawal", sans-serif;
+}
+.contact > div:has(form) .containerContent form input[type="submit"]:hover,
+.contact > div:has(form) .containerContent form input[type="submit"]:focus{
+    background-color: var(--main-color);
+    color: white;
+}
+.contact .otherContacts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.contact .otherContacts p a{
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: underline;
+}
+.contact .otherContacts .socailLinks{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contact .otherContacts .socailLinks a span{
+    color: var(--text-color);
+    font-size: 24px;
+    background-color: var(--main-bg-color);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    padding: 0px;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    transition: var(--main-transition);
+    margin-top: 10px;
+}
+.contact .otherContacts .socailLinks a span:hover{
+    border: 2px solid var(--main-color);
+    /* font-size: 28px; */
+    box-shadow: var(--hover-shadow);
+    background-color: transparent;
+    background-image: var(--main-gradient);
+    transform: translateY(-3px);
+}
+@media (max-width: 1200px) {
+    .contact > div:has(form) .containerContent > *{
+        width: 70%;
+    }
+}
+@media (max-width: 992px) {
+    .contact > div:has(form) .containerContent > *{
+        width: 80%;
+    }
+    .contact > div:has(form) .containerContent form > *{
+        width: 100%;
+    }
+}
+@media (max-width: 767px) {
+    .contact > div:has(form){
+        min-height: 750px;
+    }
+    .contact > div:has(form) .containerContent{
+        padding-top: 30px;
+    }   
+    .contact > div:has(form) .containerContent > *{
+        width: 90%;
+    }
+    .contact > div:has(form) .containerContent form > *{
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .contact > div:has(form){
+        min-height: 800px;
+    }
+}

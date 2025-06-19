@@ -1,0 +1,87 @@
+.heading{
+    font-family: "Poppins", sans-serif;
+    /* position: sticky; */
+    top: 50px;
+    /* left: 00%; */
+    /* transform: translateX(-50%); */
+    max-width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    color: var(--text-color);
+}
+.heading div:has(> h2){
+    transition: var(--main-transition);
+    transition-duration: 1.2s;
+    /* overflow: hidden; */
+    position: relative;
+    text-wrap: wrap;
+}
+.heading h2{
+    /* font-family: "Maven Pro", sans-serif; */
+    text-align: center;
+    font-weight: bold;
+    font-size: 100px;
+    transition: var(--main-transition);
+    transition-duration: 0.6s;
+    /* filter: blur(10px); */
+    /* opacity: 0; */
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    padding-bottom: 10px;
+    /* background-color: rgb(159, 64, 40) !important; */
+    /* width: 400px !important; */
+}
+.heading h2::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    bottom: 5px;
+    height: 2px;
+    width: 0px;
+    background-color: var(--main-color);
+    transition: var(--main-transition);
+    transition-delay: 1s;
+    transition-duration: 0.5s;
+}
+.heading h2::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%) translateY(50%);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    transition: var(--main-transition);
+    /* transition-delay: 1s; */
+    transition-duration: 0.8s;
+    z-index: -1;
+}
+.heading.animate div h2::before{
+    width: 150px;
+}
+.heading span{
+    /* background-color: red; */
+}
+.heading.animate div h2::after{
+    height: 10px;
+    width: 10px;
+    bottom: 0%;
+    transform: translateX(-50%) translateY(-0px);
+}
+.heading.animate{
+}
+.heading.animate h2{
+    /* opacity: 0.2; */
+    font-size: 40px;
+}
+@media (max-width: 600px) {
+    .heading h2{
+        font-size: 45px;
+    }
+}

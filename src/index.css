@@ -1,0 +1,109 @@
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* background-color: rgb(123,123,123,0.5); */
+}
+:root{
+  --main-bg-color: #fbfbfb;
+  --sec-bg-color: #ffffff;
+  --scroll-sec-bg-color: #ffffff9c;
+  --text-color: #0e191e;
+  --hovered-text-color: #fbfbfb;
+  --main-color: #1d71b8;
+  --sub-main-color: #1f2c6f;
+  --main-gradient: linear-gradient(to right, var(--main-color), var(--sub-main-color));
+  --scrollbar-gradient: linear-gradient(to bottom, var(--main-color), var(--sub-main-color));
+  --main-shadow: 11px 0px 10px -3px #aaa;
+  --card-shadow: 0px 5px 10px -3px #aaa;
+  --card-hover-shadow: 0px 5px 10px -3px var(--main-color);
+  --hover-shadow: 0px 16px 20px -8px var(--sub-main-color);
+  --main-transition: all 0.2s 0s ease-out;
+  --step-count: #1d1d1d;
+  --step-count-animated: #14141493;
+  --hero-p-text-color: #1f2c6f;
+  --card-content-bg: rgba(248, 248, 248, 0.73);
+  --step-shadow:  0px -33px 34px -43px var(--main-color);
+}
+html{
+  scroll-behavior: smooth;
+  /* scroll-padding: 74px; */
+}
+@media (max-width: 600px) {
+  html{
+    /* scroll-padding: 50px; */
+  }
+  
+}
+body{
+  font-family: "Poppins", sans-serif;
+  background-color: var(--main-bg-color);
+  max-height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+}
+.App *[language="ar"]{
+    font-family: "Tajawal",sans-serif !important;
+    direction: rtl;
+}
+.App *[language="ar"] *{
+  direction: rtl;
+}
+body::-webkit-scrollbar{
+  width: 10px;
+}
+body::-webkit-scrollbar-button{
+  background-color: var(--main-bg-color);
+}
+body::-webkit-scrollbar-track-piece{
+}
+body::-webkit-scrollbar-thumb{
+  background-image: var(--scrollbar-gradient);
+}
+body::-webkit-scrollbar-track{
+  background-color: var(--sec-bg-color);
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+img, video{
+  max-width: 100%;
+}
+.gradient-text{
+  background-image: var(--main-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* background-color: blue; */
+}
+@media (min-width: 767px) {
+  .container{
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container{
+    width: 980px;
+  }
+}
+@media (min-width: 1200px) {
+  .container{
+    width: 1190px;
+  }
+}
+.App[language="en"] *[language="ar"]{
+  display: none;
+}
+.App[language="ar"] *[language="en"]{
+  display: none;
+}

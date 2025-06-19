@@ -1,0 +1,62 @@
+.steps{
+    padding: 0px 100px 0px 100px;
+    background-color: var(--sec-bg-color);
+    width: 100%;
+    /* --mask:
+        radial-gradient(95.01px at calc(100% + 64.00px) 50%,#0000 calc(99% - 9px),#000 calc(101% - 9px) 99%,#0000 101%) calc(50% - 36.5px + .5px) calc(50% - 128px)/ 73px 256px  repeat-y,
+        radial-gradient(95.01px at -64px 50%,#0000 calc(99% - 9px),#000 calc(101% - 9px) 99%,#0000 101%) calc(50% + 36.5px) 50%/73px 256px  repeat-y;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-color: red; */
+    z-index: 10;
+    /* position: relative; */
+}
+/* .steps > div[language="en"] > div:nth-child(2) > div{
+    overflow: unset;
+} */
+.steps > div[language="en"] > div:nth-child(2) > div p{
+    transform: translateY(30%);
+}
+.steps > div:has(p) {
+    /* overflow-y: scroll;
+    height: 80vh;
+    scroll-snap-type: y mandatory;
+    display: flex;
+    flex-direction: column;
+    background-color: red; */
+}
+.steps > div:has(p)::-webkit-scrollbar {
+    /* display: none; */
+}
+.steps > div:has(p) > div{
+    /* min-height: 80vh; */
+}
+@media (max-width: 600px) {
+    .steps{
+        padding: 10px;
+    }
+}
+.steps .lineWrapper{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-5px);
+    width: 10px;
+    height: 50vh;
+    opacity: 0;
+    border-left: 10px dashed #ccc;
+}
+.steps .lineWrapper .line{
+    /* position: absolute;
+    left: 0;
+    width: 10px;
+    transform: translateX(-100%);
+    height: 120%;
+    background-color: red;
+    transition: var(--main-transition);
+    transition-duration: 0.5s;
+    transition-delay: 0.5s; */
+}
+.steps .step_animate__M2VNC{
+    background-color: red;
+}

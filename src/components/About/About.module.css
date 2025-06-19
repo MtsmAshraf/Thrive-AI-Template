@@ -1,0 +1,182 @@
+.about{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    /* background-image: url(../../assests/about.png); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* color: rgb(205, 232, 255); */
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    min-height: 70vh;
+}
+.about > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about > div > div:first-child{
+    transform: translateY(80px) ;
+    transition: var(--main-transition);
+    transition-duration: 0.6s;
+    transition-delay: 0.6s;
+    z-index: 3;
+}
+.about > div > div h2{
+    transition-delay: 0.6s;
+    transform: scale(1);
+    font-size: 100px;
+}
+.about.animate > div > div:first-child h2{
+    font-size: 40px;
+    /* transform: scale(1); */
+}
+.about > div > div:first-child h2::before{
+    width: 0;
+}
+.about.animate > div > div:first-child h2::before{
+    width: 100px;
+}
+.about.animate > div > div:first-child{
+    transform: translateY(0px);
+}
+
+
+
+
+
+.about > div > div:nth-child(2){
+    transform: translateY(80px) ;
+    transition: var(--main-transition);
+    transition-duration: 0.6s;
+    transition-delay: 0.6s;
+    z-index: 3;
+}
+.about > div > div:nth-child(2) h2{
+    transition-delay: 0.6s;
+    transform: scale(1);
+    font-size: 60px;
+}
+.about.animate > div > div:nth-child(2) h2{
+    font-size: 40px;
+    /* transform: scale(1); */
+}
+.about > div > div:nth-child(2) h2::before{
+    width: 0;
+}
+.about.animate > div > div:nth-child(2) h2::before{
+    width: 100px;
+}
+.about.animate > div > div:nth-child(2){
+    transform: translateY(0px);
+}
+
+.about > div .text{
+    background-color: rgb(0,0,0,0.1);
+    border-left: 20px solid var(--main-color);
+    border-right: 20px solid var(--main-color);
+    height: 250px;
+    /* border-radius: 8px; */
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    vertical-align: center;
+    transition: var(--main-transition);
+    perspective-origin: center center;
+    overflow: hidden;
+    padding: 40px 20px;
+    width: 100%;
+    color: var(--text-color);
+    /* transform: rotateZ(90deg); */
+}
+.about.animate  div .text{
+    animation: about-p 0.2s cubic-bezier(0.71, -0.05, 0.24, 0.92) 0.2s 1 both alternate;
+}
+.about > div .text::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 102%;
+    height: 102%;
+    transition: var(--main-transition);
+    border-radius: inherit;
+    opacity: 1;
+    /* background-color: red; */
+    z-index: 1;
+}
+.about > div > div{
+    margin-bottom: 20px;
+}
+.about > div .text p{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: var(--main-transition);
+    transform: translateY(30px);
+    transition-delay: 0.5s;
+    opacity: 0;
+    z-index: 2;
+}
+.about.animate > div .text p{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.about.animate > div .text p{
+    transition-delay: 1s;
+}
+.about.animate > div .text p:last-child{
+    transition-delay: 1.2s;
+}
+@media (max-width: 992px) {
+    .about > div .text{
+        height: 330px;
+    }
+}
+@media (max-width: 767px) {
+    .about{
+        height: 600px;
+    }
+    .about > div .text{
+        height: 400px;
+    }
+    .about > div .text[language="ar"]{
+        height: 300px;
+    }
+    .about > div > div h2{
+        transition-delay: 0.6s;
+        transform: scale(1);
+        font-size: 60px;
+    }
+}
+@media (max-width: 500px) {
+    .about{
+        padding-top: 50px;
+    }
+    .about > div .text{
+        /* height: 500px; */
+    }
+    .about > div .text p{
+        font-size: 16px;
+    }
+}
+@keyframes about-p {
+    0%{
+        border-left: 20px solid var(--main-color);
+        border-right: 20px solid var(--main-color);
+    
+    }
+    50%{
+        border-left: 20px solid var(--main-color);
+        border-right: 20px solid var(--main-color);
+    
+    }
+    100%{
+        border-left: 6px solid var(--main-color);
+        border-right: 6px solid var(--main-color);
+    
+    }
+}
